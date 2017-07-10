@@ -1,6 +1,5 @@
 import React from 'react';
-import {TodoList} from '../TodoList';
-
+import {TODO, TodoList} from '../Todo';
 import './App.css';
 
 class App extends React.Component {
@@ -10,19 +9,23 @@ class App extends React.Component {
       todoItems: [
         {
           id: 1,
-          title: 'First thing to do',
+          description: 'First thing to do',
+          status: TODO.STATUS.INCOMPLETE,
         },
         {
           id: 2,
-          title: 'Another thing to do',
+          description: 'Another thing to do',
+          status: TODO.STATUS.COMPLETE,
         },
         {
           id: 3,
-          title: 'Then do this',
+          description: 'Then do this',
+          status: TODO.STATUS.INCOMPLETE,
         },
         {
           id: 4,
-          title: 'Finally this one',
+          description: 'Finally this one',
+          status: TODO.STATUS.INCOMPLETE,
         },
       ]
     };

@@ -1,0 +1,15 @@
+.todo {
+  .description {
+    font-weight: bold;
+  }
+}
+.todo-list {
+  .todo {
+    &.status-complete {
+      text-decoration: line-through;
+      .description {
+        font-weight: normal;
+      }
+    }
+  }
+}
