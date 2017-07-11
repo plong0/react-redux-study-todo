@@ -1,6 +1,6 @@
 # React + Redux "Todo List" Study
 
-This is a simple "Todo List" implementation for my study of React + Redux.
+This is a simple "Todo List" implementation to learn React + Redux.
 
 ## Project Setup
 
@@ -16,3 +16,31 @@ This is a simple "Todo List" implementation for my study of React + Redux.
 * [Official create-react-app docs](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md) - complete documentation for the create-react-app utility
 * ["Running Tests" in a create-react-app project](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#running-tests) - how to structure unit tests
 * [Jest](https://facebook.github.io/jest/) - official website for Jest testing utility
+
+
+## Running the Things
+
+These commands are all executed on the command line from the project root.  I use multiple console windows/tabs.
+
+### Dev Server
+```
+yarn start
+```
+
+### SASS Watcher/Compiler
+```
+npm run watch-css
+```
+*You will need to restart the watcher any time you add new scss files that need to be compiled.*
+
+
+### Tests
+#### Automatic Testing
+```
+yarn test
+```
+
+#### Test Coverage
+```
+yarn test -- --coverage
+```
