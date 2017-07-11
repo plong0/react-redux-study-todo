@@ -10,6 +10,7 @@ This is a simple "Todo List" implementation to learn React + Redux.
 * code style based on [Airbnb React/JSX Style Guide](https://github.com/airbnb/javascript/tree/master/react)
 * testing setup uses [Jest](https://facebook.github.io/jest/) and [Enzyme](http://airbnb.io/enzyme/) as described in ["Testing Components"](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#testing-components)
 * Redux Container Components are tested using [redux-mock-store](http://arnaudbenard.com/redux-mock-store/)
+* Redux selectors are optimized through memoization by [Reselect](https://github.com/reactjs/reselect)
 
 
 ## Helpful Resources
@@ -19,9 +20,10 @@ This is a simple "Todo List" implementation to learn React + Redux.
 * ["Running Tests" in a create-react-app project](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#running-tests) - how to structure unit tests
 * [Jest](https://facebook.github.io/jest/) - official website for Jest testing utility
 * [Official Redux Basics docs](http://redux.js.org/docs/basics/)
-* ["Getting Started With React Redux: An Intro"](https://www.codementor.io/mz026/getting-started-with-react-redux-an-intro-8r6kurcxf) by [Yang-Hsing](https://www.codementor.io/mz026) - nice high-level description of Redux
+* ["Getting Started With React Redux: An Intro"](https://www.codementor.io/mz026/getting-started-with-react-redux-an-intro-8r6kurcxf) by [Yang-Hsing](https://www.codementor.io/mz026) - high-level description of Redux
 * [Discussion on testing Container Components](https://github.com/airbnb/enzyme/issues/472) - boils down to using `redux-mock-store` and passing a `{context: { store }}` to enzyme's `shallow()` function
-* ["Unit Testing React components that use Redux"](http://www.thereformedprogrammer.net/unit-testing-react-components-that-use-redux/) - nice article about testing components that use Redux
+* ["Unit Testing React components that use Redux"](http://www.thereformedprogrammer.net/unit-testing-react-components-that-use-redux/) - article about testing components that use Redux
+* ["React, Reselect and Redux"](https://medium.com/@parkerdan/react-reselect-and-redux-b34017f8194c) - Introduces Reselect using a simple example
 
 
 ## Running the Things

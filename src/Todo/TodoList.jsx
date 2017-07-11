@@ -3,6 +3,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import TODO from './TodoConstants';
+import { makeGetTodoItemsState } from './TodoSelectors';
 import Todo from './Todo';
 import './Todo.css';
 
@@ -42,14 +43,18 @@ TodoList.propTypes = {
 export {TodoList};
 
 // connect to Redux Store
-function mapStateToProps(state) {
-  return {
-    items: state.todoItems
+function makeMapStateToProps(state) {
+  const getTodoItemsState = makeGetTodoItemsState();
+  const mapStateToProps = state => {
+    return {
+      items: getTodoItemsState(state)
+    };
   };
+  return mapStateToProps;
 }
 
 function mapDispatchToProps(dispatch) {
     return bindActionCreators({}, dispatch);
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(TodoList);
+export default connect(makeMapStateToProps, mapDispatchToProps)(TodoList);
