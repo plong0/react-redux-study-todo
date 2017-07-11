@@ -1,7 +1,10 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import configureStore from 'redux-mock-store';
 import TodoList from './TodoList';
-import TODO from './constants';
+import TODO from './TodoConstants';
+
+const mockStore = configureStore();
 
 let items;
 beforeAll(() => {
@@ -30,5 +33,8 @@ beforeAll(() => {
 });
 
 test('renders without crashing', () => {
-  shallow(<TodoList items={items} />);
+  const store = mockStore({
+    todoItems: items
+  });
+  shallow(<TodoList items={items} />, {context: { store }}).dive();
 });

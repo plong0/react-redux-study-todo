@@ -1,22 +1,28 @@
 import React from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import TODO from './constants.js';
+import TODO from './TodoConstants';
 import Todo from './Todo';
 import './Todo.css';
 
 class TodoList extends React.Component {
   render() {
     const todoItems = this.renderItems(this.props.items);
+    const summary = 'Listing '+todoItems.length+' thing'+((todoItems.length !== 1)?'s':'')+' to do';
     return (
-      <ul className="todo-list">
-        {todoItems}
-      </ul>
+      <div className="todo-list">
+        <p className="summary">{summary}</p>
+        <ul>
+          {todoItems}
+        </ul>
+      </div>
     );
   }
   renderItems(items) {
     return items.map(item => (
       <li key={item.id}>
-        <Todo description={item.description} status={item.status} />
+        <Todo id={item.id} description={item.description} status={item.status} />
       </li>
     ));
   }
@@ -32,4 +38,18 @@ TodoList.propTypes = {
   ).isRequired,
 }
 
-export default TodoList;
+// export for testing
+export {TodoList};
+
+// connect to Redux Store
+function mapStateToProps(state) {
+  return {
+    items: state.todoItems
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+    return bindActionCreators({}, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(TodoList);
